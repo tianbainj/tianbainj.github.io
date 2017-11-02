@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+    <video id='vid' width="600" height="300" controls/>
+
+
+<script type="text/javascript"
+    src="//www.gstatic.com/cast/sdk/libs/mediaplayer/1.0.0/media_player.js">
+</script>
+
+<script type="text/javascript">
+
+window.onload = function() {
+// If you set ?Debug=true in the URL, such as a different App ID in the
+// developer console, include debugging information.
+    if (window.location.href.indexOf('Debug=true') != -1) {
+        cast.receiver.logger.setLevelValue(cast.receiver.LoggerLevel.DEBUG);
+    }
+
+    var mediaElement = document.getElementById('vid');
+    mediaElement.autoplay = true;    
+
+    // if (window.player !== null) {
+    //     window.player.unload();    // Must unload before starting again.
+    //     window.player = null;
+    // }
+
+    var url = "http://profficialsite.origin.mediaservices.windows.net/5ab94439-5804-4810-b220-1606ddcb8184/tears_of_steel_1080p-m3u8-aapl.ism/manifest(format=m3u8-aapl)";
+    window.host = new cast.player.api.Host(
+        {'mediaElement':mediaElement, 'url':url});
+    var protocol = cast.player.api.CreateHlsStreamingProtocol(host);
+
+    console.log("we have protocol ");
+    if (protocol !== null) {
+        console.log("Starting Media Player Library");
+        window.player = new cast.player.api.Player(host);
+        window.player.load(protocol, 0);
+    }
+    
+}
+
+</script>
+
+</html>
