@@ -7,7 +7,7 @@
     <video id='vid' width="600" height="300" controls/>
 
 
-<script type="text/javascript"
+<!-- <script type="text/javascript"
     src="//www.gstatic.com/cast/sdk/libs/mediaplayer/1.0.0/media_player.js">
 </script>
 
@@ -42,6 +42,20 @@ window.onload = function() {
     
 }
 
+</script> -->
+
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+
+<script>
+    if(Hls.isSupported()) {
+        var video = document.getElementById('vid');
+        var hls = new Hls();
+        hls.loadSource('http://profficialsite.origin.mediaservices.windows.net/5ab94439-5804-4810-b220-1606ddcb8184/tears_of_steel_1080p-m3u8-aapl.ism/manifest(format=m3u8-aapl)');
+        hls.attachMedia(video);
+        hls.on(Hls.Events.MANIFEST_PARSED, function() {
+            video.play();
+        })
+    }
 </script>
 
 </html>
