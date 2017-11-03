@@ -16,9 +16,11 @@
 window.onload = function() {
 // If you set ?Debug=true in the URL, such as a different App ID in the
 // developer console, include debugging information.
-    if (window.location.href.indexOf('Debug=true') != -1) {
-        cast.receiver.logger.setLevelValue(cast.receiver.LoggerLevel.DEBUG);
-    }
+    // if (window.location.href.indexOf('Debug=true') != -1) {
+    //     cast.receiver.logger.setLevelValue(cast.receiver.LoggerLevel.DEBUG);
+    // }
+
+    cast.receiver.logger.setLevelValue(cast.receiver.LoggerLevel.DEBUG);
 
     var mediaElement = document.getElementById('vid');
     mediaElement.autoplay = true;    
