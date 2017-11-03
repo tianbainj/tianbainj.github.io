@@ -30,7 +30,10 @@ window.onload = function() {
     //     window.player = null;
     // }
 
-    var url = "https://profficialsite.origin.mediaservices.windows.net/5ab94439-5804-4810-b220-1606ddcb8184/tears_of_steel_1080p-m3u8-aapl.ism/manifest(format=m3u8-aapl)";
+    var url = "https://profficialsite.origin.mediaservices.windows.net/\
+              479c19aa-aefb-482e-8337-0ff5ba3a84a3/\
+              sintel-1280-surround-m3u8-aapl_enc.ism/manifest(format=m3u8-aapl)" 
+    //"https://profficialsite.origin.mediaservices.windows.net/5ab94439-5804-4810-b220-1606ddcb8184/tears_of_steel_1080p-m3u8-aapl.ism/manifest(format=m3u8-aapl)";
     window.host = new cast.player.api.Host(
         {'mediaElement':mediaElement, 'url':url});
     var protocol = cast.player.api.CreateHlsStreamingProtocol(host);
